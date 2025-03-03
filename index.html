@@ -4,49 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Gatos</title>
-    <style>
-        .justificado {
-            text-align: justify;
-        }
-    </style>
-</head>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="imagenes/logo.avif" alt="logo" width="110px"></a>
-          <a class="navbar-brand" href="file:///D:/trabajos%20de%20sitio%20web/Gato2/istereg/index.html">Gatos</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://pixnio.com/es/fotos/animales/gatos-gatitos#"><img src="imagenes/logo.avif" alt="logo" width="110px"></a>
+        <a class="navbar-brand" href="file:///D:/trabajos%20de%20sitio%20web/Gato2/istereg/index.html">Gatos</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#Backflips">backflips</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Backflips">Backflips</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Mejores">Perros Y Gatos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#tipo">Marcas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#Mejores">Perros Y Gatos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#info">Info</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#info">Info</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Más
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://mdonihue.cl/#">Muni</a></li>
+                        <li><a class="dropdown-item" href="file:///D:/trabajos%20de%20sitio%20web/Gato2/rock%20y%20cervezaaa/index.html#">ROCK</a></li>
+                    </ul>
+                </li>
             </ul>
-          </div>
-        </div>
-      </nav>
-
+         </div>
+         </div>
+         </nav>
       <div class="container">
         <a name="lava"></a>
-        <div class="slider-frame">
-          <ul>
-            <li><img src="imagenes/gatomoto.jpg" alt=""></li>
-            <li><img src="imagenes/AAAAA.jpg" alt=""></li>
-            <li><img src="imagenes/gatowon.jpg" alt=""></li>
-            <li><img src="imagenes/gatoteclado.jpeg" alt=""></li>
-          </ul>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="imagenes/gatomoto.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/gatowon.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="imagenes/gatoteclado.jpeg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <script>
+            const carousel = document.querySelector('#carouselExample');
+            const carouselInstance = new bootstrap.Carousel(carousel);
+    
+            let touchStartX = 0;
+            let touchEndX = 0;
+    
+            function handleSwipe() {
+                if (touchStartX - touchEndX > 100) {
+                    carouselInstance.next();
+                }
+                if (touchEndX - touchStartX > 100) {
+                    carouselInstance.prev();
+                }
+            }
+    
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            carousel.addEventListener('mousedown', (e) => {
+                touchStartX = e.screenX;
+            });
+    
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            carousel.addEventListener('mouseup', (e) => {
+                touchEndX = e.screenX;
+                handleSwipe();
+            });
+        </script>
+      </div>
         <br>
         <br>
         </div>
@@ -64,7 +120,6 @@
        <br>
        <br>
        <br>
-       <br>
 
         <div class="losgatos">
           <a name="Backflips"></a>
@@ -77,8 +132,6 @@
             </div>
           </div>
         </div>
-
-        <br>
 
         <div class="quecomen">
         <p class="texto3">
@@ -94,8 +147,54 @@
              <div class="col-md-5" align="left"><div class="gatos3"></div></div>
             </div>
           </div>
-        </p>
         </div>
+        
+        </p>
+
+        <div class="Marcas">
+          <a name="tipo"></a>
+          <div class="contenedor4">
+          <div class="row">
+            <div class="col-md-5" align="center"><div class="gatos4"></div></div>
+            <div class="col-md-7" align="center"><h2>Marcas de Gatos</h2><h4>Los gatos tienen una gran variedad de colores en su pelaje debido a la genética
+              , específicamente a los genes que controlan la pigmentación de su piel y pelo. Los colores y patrones de pelaje de los gatos son el resultado
+              de combinaciones complejas de genes que influyen en el color base, la distribución de los colores, y los patrones de pelaje, Los colores de 
+              pelaje en los gatos están determinados principalmente por varios genes que influyen en la producción y distribución de pigmentos en el pelo.Uno 
+              de los genes más importantes en la determinación del color en los gatos es el gen del color naranja. Este gen afecta a la producción de pigmento
+              y es sex-linked, lo que significa que está en el cromosoma X. Esto explica por qué hay más gatos machos naranjas que hembras, ya que los machos 
+              solo tienen un cromosoma X (y, por lo tanto, solo necesitan un gen para ser naranjas), mientras que las hembras tienen dos cromosomas X y necesitan
+              dos genes para ser completamente naranjas.</h4></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="Aside">
+          <aside>
+            <p>
+            <h1 style="color:  #F4B83F;">Marcas de Gatos</h1>
+            <section>
+              <li><a class="link" href="https://www.pexels.com/es-es/buscar/gatos%20naranjas/#">Naranja</a></li>
+            </section>
+            <br>
+            <section>
+              <li><a class="link" href="https://unsplash.com/es/s/fotos/gato-blanco#">Blanco</a></li>
+            </section>
+            <br>
+            <section>
+              <li><a class="link" href="https://www.istockphoto.com/es/fotos/gatitos-negros?msockid=37a8ef1c4c016640236afa8b4da46746#">Negro</a></li>
+            </section>
+            <br>
+            <section>
+              <li><a class="link" href="https://www.istockphoto.com/es/fotos/gatos-grises?msockid=37a8ef1c4c016640236afa8b4da46746#">Gris</a></li>
+            </section>
+            <br>
+            <section>
+              <li><a class="link" href="https://unsplash.com/es/s/fotos/gato-de-tres-colores#">De 3 Colores</a></li>
+            </section>
+          </p>
+           </aside>
+         </div>
+
        <a name="info"></a>
        <h2>Informacion:</h2>
         <div class="row footer">
